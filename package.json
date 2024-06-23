@@ -4,11 +4,11 @@
   "description": "Full Stack Open",
   "main": "src/index.js",
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
+    "start": "webpack-dev-server --open --mode development",
     "start-prod": "node app.js",
     "test": "jest",
     "eslint": "eslint './**/*.{js,jsx}'",
-    "build": "react-scripts --openssl-legacy-provider build",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider webpack --mode production",
     "lint": "eslint .",
     "serve": "node app.js"
   },
@@ -59,10 +59,8 @@
   "dependencies": {
     "axios": "^0.19.2",
     "express": "^4.17.1",
-    "openssl": "^2.0.0",
     "react": "^16.13.1",
-    "react-dom": "^16.14.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^5.0.1"
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0"
   }
 }
