@@ -30,6 +30,8 @@ app.get('/version', (req, res) => {
 
 // Start the Express server
 
-app.listen(10000, '127.0.0.1', () => {
-  console.log(`Server started on port ${10000}`)
+const PORT = process.env.PORT || 10000 // Use process.env.PORT or fallback to 10000
+
+app.listen(PORT, '127.0.0.1', () => {
+  console.log(`Server started on port ${PORT}`)
 })
