@@ -17,7 +17,8 @@ jobs:
         run: npm install --legacy-peer-deps
       - name: Set NODE_OPTIONS
         run: |
-          echo "export NODE_OPTIONS='--openssl-legacy-provider'" >> $GITHUB_ENV
+          chmod +x ./set_node_options.sh
+          source ./set_node_options.sh
       - name: Check style
         run: npm run eslint
       - name: Build
