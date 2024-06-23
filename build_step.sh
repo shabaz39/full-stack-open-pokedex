@@ -6,7 +6,7 @@ echo "Build script"
 export NODE_OPTIONS=--openssl-legacy-provider
 
 # Install npm dependencies including dev dependencies
-npm install --legacy-peer-deps
+npm install 
 
 # Install webpack-cli as a dev dependency
 npm install --save-dev webpack-cli
