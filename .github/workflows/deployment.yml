@@ -5,11 +5,16 @@ on:
     branches:
       - master
 
+  pull_request:
+        branches: [main]
+        types: [opened, synchronize]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger deployment
+        if: ${{ github.event_name == 'push' }}  # Deploy only on direct pushes to main
         run: curl -X POST "https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }}?key=${{ secrets.RENDER_API_KEY }}"
         env:
           RENDER_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID }}
